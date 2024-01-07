@@ -68,13 +68,13 @@ public class Ticket {
 	private Long id;
 	private String nomClient;
 	private double prix;
-	@Column(unique =false, nullable = true)
+	@Column(unique =false, nullable = true) // unique wlat false
 	private Integer codePayement;
-	private boolean reservee;
+	private boolean reserve; // wahed l e t7ydat
 	@ManyToOne
 	private Place place;
 	@ManyToOne
-	@JsonProperty(access = Access.WRITE_ONLY)
+//	@JsonProperty(access = Access.WRITE_ONLY) modification t7ydat
 	private Projection projection;
 	
 }

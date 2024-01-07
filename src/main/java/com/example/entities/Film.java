@@ -81,14 +81,14 @@ public class Film {
 		this.projections = projections;
 	}
 	public Categorie getCategories() {
-		return categories;
+		return categorie; // wahed s aussi t7ydat
 	}
 	public void setCategories(Categorie categories) {
-		this.categories = categories;
+		this.categorie = categorie; // wahed l s t7ydat
 	}
 	@OneToMany(mappedBy = "film")
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Collection<Projection> projections;
 	@ManyToOne
-	private Categorie categories;
+	private Categorie categorie; // wahed l s t7ydat
 }

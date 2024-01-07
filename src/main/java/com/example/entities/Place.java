@@ -71,7 +71,7 @@ public class Place {
 	@ManyToOne
 	private Salle salle;
 	@OneToMany(mappedBy = "place")
-	@JsonProperty(access = Access.WRITE_ONLY)
+	@JsonProperty(access = Access.WRITE_ONLY) // hadi tzadet
 	private Collection<Ticket> tickets;
 	
 }

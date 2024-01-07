@@ -19,11 +19,13 @@ import com.example.dao.TicketRepository;
 import com.example.entities.*;
 import com.example.entities.Ticket;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @RestController
+@CrossOrigin("*") // ajouter
 public class CinemaRestController {
 	@Autowired
 	private TicketRepository ticketRepository;
@@ -39,8 +41,9 @@ public class CinemaRestController {
 		
 		}
 	
-	
+
 	@PostMapping("/payerTickets")
+	@Transactional // hadi tzadet
 	public List<Ticket> payerTickets(@RequestBody TicketForm ticketForm){
 		List<Ticket> listTickets = new ArrayList<>();
 		ticketForm.getTickets().forEach(idTicket->{
